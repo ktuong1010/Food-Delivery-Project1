@@ -1,0 +1,25 @@
+<h1>Welcomeee, {{username}}!</h1>
+<p>Your Food Ordering Dashboard</p>
+<div class="container mt-4"> 
+  <div class="mt-4" >
+
+    <div class="row">
+    {{#each item}}
+    <div class ="col-sm-6 col-lg-4">
+      <div class="card">
+        <a href="/item/{{this.slug}}">
+          <img src="{{this.image}}" alt="{{this.image}}" class="img">
+        </a>
+        <div class="card-body">
+          <a href="/item/{{this.slug}}">
+            <h5 class="card-title text-lg font-semibold text-gray-800 hover:text-blue-600 transition-colors">{{this.name}}</h5>
+          </a>
+          <p class="card-text">{{this.description}}</p>
+          <a href="/item/{{this.slug}}/order" class="order-btn">Chọn món</a>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  </div>
+</div>
