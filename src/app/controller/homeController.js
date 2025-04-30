@@ -48,6 +48,19 @@ class homeController  {
             res.status(500).send('Internal server error');
         }
     }
+
+    async search(req, res) {
+        try {
+            const query = req.query.query;
+            const ItemModel = new itemModel();
+            const items = await ItemModel.searchItems(query); // Add to itemModel
+            // res.render('search-results', { layout: 'public', items, query });
+            res.json({ query, items });
+        } catch (error) {
+            console.error('Error in search:', error);
+            res.status(500).send('Internal server error');
+        }
+    }
 }
 
 module.exports = new homeController();

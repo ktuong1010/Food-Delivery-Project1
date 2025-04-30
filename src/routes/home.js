@@ -8,6 +8,7 @@ router.get('/user', homeController.userHome);
 router.get('/login', loginController.login);
 router.post('/login', loginController.authentication);
 router.get('/logout', loginController.logout);
+router.get('/search', homeController.search);
 
 
 module.exports = router;

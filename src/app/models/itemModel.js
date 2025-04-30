@@ -99,6 +99,20 @@ class itemModel{
             }
         });
     }
+    searchItems(query) {
+        return new Promise(async (resolve, reject) => {
+            try {
+                const connection = await getConnection();
+                const sql = 'SELECT * FROM items WHERE name LIKE ? OR description LIKE ?';
+                const [rows] = await connection.execute(sql, [`%${query}%`, `%${query}%`]);
+                await connection.end();
+                resolve(rows);
+            } catch (error) {
+                console.error('Error searching items:', error);
+                reject(error);
+            }
+        });
+    }
 
 }
 
