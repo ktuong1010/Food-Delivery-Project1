@@ -43,7 +43,7 @@ body {
   position: relative;
   width: 430px;
   height: 500px;
-  background-color: var(--white-color);
+  background-color: white ;
   border-radius: 15px;
   padding: 120px 32px 64px;
   border: 1px solid var(--primary-color);

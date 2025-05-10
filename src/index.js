@@ -18,6 +18,9 @@ app.use(session({
   saveUninitialized: false
 }));
 const hbs = exphbs.create({
+   helpers: {
+        eq: (a, b) => a === b, // Register the 'eq' helper
+    },
   
   layoutsDir: path.join(__dirname, 'resources/views/layouts'),
   partialsDir: path.join(__dirname, 'resources/views/partials'),

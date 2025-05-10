@@ -1,19 +1,50 @@
+// Importing the database connection utility
 const { getConnection } = require('../../db');
 
 class UserModel {
+
+    // Static method to find a user by their credentials (username and password)
     static async findUserByCredentials(username, password) {
         try {
-            const connection = await getConnection();
+            const connection = await getConnection(); // Establish a database connection
+
+            // SQL query to find a user with the given username and password
             const [rows] = await connection.execute(
                 'SELECT id, username, isAdmin FROM users WHERE username = ? AND password = ?',
                 [username, password]
             );
-            await connection.end();
-            return rows.length > 0 ? rows[0] : null; // Return user or null
+
+            await connection.end(); // Close the database connection
+
+            // Return the user if found, otherwise return null
+            return rows.length > 0 ? rows[0] : null;
         } catch (error) {
+            // Throw a custom error if a database error occurs
             throw new Error('Database error during user lookup');
         }
     }
+
+    // Method to fetch all users from the database
+    getUsers() {
+        return new Promise(async (resolve, reject) => {
+            try {
+                const connection = await getConnection(); // Establish a database connection
+
+                // SQL query to fetch all users
+                const sql = 'SELECT id, username, isAdmin FROM users';
+                const [rows] = await connection.execute(sql); // Execute the query
+
+                await connection.end(); // Close the database connection
+
+                resolve(rows); // Resolve the promise with the fetched rows
+            } catch (error) {
+                // Log the error and reject the promise if an error occurs
+                console.error('Error fetching users:', error);
+                reject(error);
+            }
+        });
+    }
 }
 
+// Exporting the UserModel class for use in other parts of the application
 module.exports = UserModel;

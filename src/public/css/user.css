@@ -1,12 +1,14 @@
 /* Navbar */
 .navbar.bg-dark {
-  background-color: #dddd1a !important;
+  background-color: #FF921C !important;
 }
 .navbar-brand, .nav-link {
-  color: #131b4c !important;
+  color: #ffffff !important;
+  font-weight: bold; /* Make the text bold */
+
 }
 .nav-link:hover {
-  color: #4f629a !important;
+  color: #ECA427 !important;
 }
 
 /* Login/Register Modal */

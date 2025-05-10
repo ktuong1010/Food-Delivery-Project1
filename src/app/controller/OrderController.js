@@ -1,29 +1,46 @@
+// Importing the orderModel to interact with the order data in the database
 const orderModel = require('../models/orderModel');
 
-class OrderController  {
-    
+class OrderController {
+
+    // [POST] /order - Handle placing an order
     async placeOrder(req, res) {
         try {
+            // Check if the user is logged in
             if (!req.session.user) {
-                return res.redirect('/login');
+                return res.redirect('/login'); // Redirect to login if the user is not logged in
             }
+
+            // Extract item ID and quantity from the request body
             const { itemId, quantity } = req.body;
+
+            // Validate the input fields
             if (!itemId || !quantity || quantity <= 0) {
-                return res.status(400).send('Item ID and valid quantity are required');
+                return res.status(400).send('Item ID and valid quantity are required'); // Return 400 if validation fails
             }
+
+            // Create an array of items to be ordered
             const items = [{ itemId: parseInt(itemId), quantity: parseInt(quantity) }];
+
+            // Instantiate the orderModel to interact with the order data
             const OrderModel = new orderModel();
+
+            // Create the order and retrieve the order ID and total cost
             const { orderId, total } = await OrderModel.createOrder(req.session.user.id, items);
+
+            // Render the order confirmation page with the order details
             res.render('order/order-confirmation', {
-                layout: 'public',
-                orderId,
-                total
+                layout: 'public', // Use the public layout
+                orderId, // Pass the order ID
+                total // Pass the total cost of the order
             });
         } catch (error) {
+            // Log and handle any errors
             console.error('Error placing order:', error);
-            res.status(500).send('Internal server error');
+            res.status(500).send('Internal server error'); // Return a 500 error response
         }
     }
 }
 
+// Exporting an instance of the OrderController class
 module.exports = new OrderController();
