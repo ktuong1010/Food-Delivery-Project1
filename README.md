@@ -26,6 +26,8 @@ For Node.js:npm install
 
 
 Check for any additional setup steps in the project’s documentation (e.g., setting up a virtual environment).
+
+
 3. Install MySQL
 
 Ensure MySQL is installed and accessible. Verify by running:mysql --version
