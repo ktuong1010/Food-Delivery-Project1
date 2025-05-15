@@ -16,6 +16,8 @@ git clone https://github.com/your-username/your-repo.git
 cd your-repo
 
 Replace https://github.com/your-username/your-repo.git with the actual repository URL.
+
+
 2. Install Dependencies
 Install the project’s dependencies based on the tech stack:
 
