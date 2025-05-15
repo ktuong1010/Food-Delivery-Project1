@@ -99,6 +99,21 @@ class orderModel {
             }
         });
     }
+
+    updateOrderStatus(orderId, status) {
+        return new Promise(async (resolve, reject) => {
+            try {
+                const connection = await getConnection();
+                const sql = 'UPDATE orders SET status = ? WHERE id = ?';
+                const [result] = await connection.execute(sql, [status, orderId]);
+                await connection.end();
+                resolve(result);
+            } catch (error) {
+                console.error('Error updating order status:', error);
+                reject(error);
+            }
+        });
+    }
 }
 
 // Exporting the orderModel class for use in other parts of the application

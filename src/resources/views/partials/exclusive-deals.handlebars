@@ -1,0 +1,25 @@
+<section class="exclusive-deals">
+  <div class="main-content">
+    <div class="ex-header">
+      <h2>Up to -40% 🥳 Exclusive Deals</h2>
+      <div class="filters">
+        <button>Vegan</button>
+        <button>Sushi</button>
+        <button class="active">Pizza & Fast food</button>
+        <button>Others</button>
+      </div>
+    </div>
+    <div class="cards">
+      {{#each exclusiveDeals}}
+        <div class="deal-card">
+          <img src="{{this.image}}" alt="{{this.alt}}" />
+          <span class="badge">{{this.discount}}</span>
+          <div class="info">
+            <p class="type">{{this.type}}</p>
+            <h3>{{this.name}}</h3>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</section>

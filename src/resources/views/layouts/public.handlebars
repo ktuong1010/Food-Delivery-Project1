@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -19,4 +19,57 @@
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
+</html> --}}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{title}}</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/responsive.css" />
+
+    <!-- Icon -->
+    <link rel="icon" href="/assets/img/Logo-no-slogan-1.ico" type="image/x-icon" />
+
+    <!-- Inline Styles-->
+    <style>
+      .main-content,
+      .footer-container,
+      .hero-banner {
+        max-width: 1528px;
+        margin: 0 auto;
+        padding: 0 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header Area (Top bar + Navbar) -->
+    <div class="container">
+      <!-- Top bar -->
+      {{> topbar}}
+      
+      <!-- Header / Navbar -->
+      {{> header}}
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+      {{{body}}}
+    </div>
+    
+    <!-- Login Modal -->
+    {{> login-modal}} 
+    <!-- Signup Modal -->
+    {{> signup-modal}}
+
+    <!-- Footer Section -->
+    {{> footer}}
+
+    <script src="/js/main.js"></script>
+  </body>
 </html>

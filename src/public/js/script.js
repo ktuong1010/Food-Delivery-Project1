@@ -29,3 +29,13 @@ function registerFunction(){
     registerTitle.style.top = "50%";
     registerTitle.style.opacity = 1;
 }
+
+const navLinkEls = document.querySelectorAll('.nav-link:not(.dropdown-toggle)');
+navLinkEls.forEach(navLinkEl => {
+    navLinkEl.addEventListener("click", (e) => {
+        // Prevent default navigation if needed (e.g., for SPA behavior)
+        // e.preventDefault();
+        document.querySelector(".active")?.classList.remove("active");
+        navLinkEl.classList.add("active");
+    });
+});

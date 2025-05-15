@@ -5,6 +5,7 @@ const path = require('path');
 const methodOverride = require('method-override');
 const exphbs = require('express-handlebars');
 const app = express();
+
 const port = 4000;
 const route = require('./routes/index');
 
@@ -20,12 +21,16 @@ app.use(session({
 const hbs = exphbs.create({
    helpers: {
         eq: (a, b) => a === b, // Register the 'eq' helper
+        isActive: (currentPath, path) => currentPath.startsWith(path) ? 'active' : '', // Register the 'isActive' helper
+        concat: (...args) => args.slice(0, -1).join(''), // Register the 'concat' helper
     },
   
   layoutsDir: path.join(__dirname, 'resources/views/layouts'),
   partialsDir: path.join(__dirname, 'resources/views/partials'),
   defaultLayout: 'user' // Default to user layout
 });
+
+
 //Template engine setup
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');

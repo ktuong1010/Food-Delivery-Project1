@@ -82,14 +82,14 @@
                     <td>${{this.total}}</td>
                     <td>{{this.status}}</td>
                     <td>
-                        <form action="/orders/{{this.id}}/status" method="POST" class="d-inline">
+                        <form action="/order/{{this.id}}/status" method="POST" class="d-inline">
                             <select name="status" onchange="this.form.submit()">
                                 <option value="pending" {{#if (eq this.status 'pending')}}selected{{/if}}>Pending</option>
                                 <option value="confirmed" {{#if (eq this.status 'confirmed')}}selected{{/if}}>Confirmed</option>
                                 <option value="cancelled" {{#if (eq this.status 'cancelled')}}selected{{/if}}>Cancelled</option>
                             </select>
                         </form>
-                        <a href="/orders/{{this.id}}" class="btn btn-info btn-sm">Details</a>
+                        <a href="/order/{{this.id}}" class="btn btn-info btn-sm">Details</a>
                     </td>
                 </tr>
                 {{/each}}

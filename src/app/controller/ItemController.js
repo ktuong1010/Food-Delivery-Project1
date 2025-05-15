@@ -1,7 +1,7 @@
 // Importing the itemModel to interact with the item database
 const itemModel = require('../models/itemModel');
 
-class ItemController {
+    class ItemController {
 
     // [GET] /item/create - Render the item creation page
     create(req, res, next) {
