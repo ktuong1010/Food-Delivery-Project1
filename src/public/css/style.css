@@ -437,7 +437,7 @@ a {
  7. Exclusive Deals
 =========================*/
 .exclusive-deals {
-  padding: 40px;
+  padding: 60px 40px;
   background: #fff;
 }
 
@@ -445,7 +445,7 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 24px;
+  margin-bottom: 40px;
 }
 
 .exclusive-deals h2 {
@@ -484,14 +484,16 @@ a {
 .cards {
   display: flex;
   justify-content: center;
-  gap: 24px;
+  gap: 60px;
+  max-width: 1800px;
+  margin: 0 auto;
 }
 
 .deal-card {
   position: relative;
   overflow: hidden;
   border-radius: 16px;
-  width: 300px;
+  width: 750px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
@@ -504,7 +506,7 @@ a {
 
 .deal-card img {
   width: 100%;
-  height: 200px;
+  height: 250px;
   object-fit: cover;
 }
 
@@ -517,6 +519,34 @@ a {
   padding: 4px 12px;
   border-radius: 12px;
   font-weight: bold;
+}
+
+.deal-card .info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  color: white;
+}
+
+.deal-card .info .type {
+  color: #FFD95E;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 5px;
+}
+
+.deal-card .info h3 {
+  color: #FFF;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: 0;
 }
 
 /*========================= 
@@ -581,58 +611,7 @@ a {
 }
 
 /*========================= 
- 9. Popular Restaurants
-=========================*/
-.popular-restaurants {
-  padding: 40px 0;
-  background-color: #fff;
-}
-
-.section-title {
-  font-size: 2.4rem;
-  font-weight: 600;
-  margin-bottom: 24px;
-  color: #000;
-}
-
-.restaurants-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 24px;
-}
-
-.restaurant-card {
-  background: #fbfbfb;
-  border-radius: 16px;
-  overflow: hidden;
-  text-align: center;
-  padding: 16px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-}
-
-.restaurant-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-}
-
-.restaurant-card img {
-  width: 100%;
-  height: 100px;
-  object-fit: contain;
-  margin-bottom: 12px;
-}
-
-.restaurant-card p {
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: #ffd95e;
-  margin: 0;
-}
-
-/*========================= 
- 10. About Us Section
+ 9. About Us Section
 =========================*/
 .about-us {
   width: 1528px;
@@ -669,6 +648,7 @@ a {
 
 .faq {
   display: flex;
+  flex-direction: row;
   gap: 32px;
   margin-bottom: 32px;
 }
@@ -678,6 +658,7 @@ a {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  align-items: flex-start;
 }
 
 .faq-question {
@@ -701,27 +682,36 @@ a {
 .faq-answers {
   flex: 2;
   display: flex;
-  justify-content: space-between;
-  gap: 16px;
+  justify-content: flex-start;
+  gap: 32px;
+  width: 100%;
+}
+
+.faq-answer {
+  display: flex;
+  justify-content: flex-start;
+  gap: 32px;
+  width: 100%;
 }
 
 .faq-card {
   background: #fbfbfb;
   border-radius: 16px;
   text-align: center;
-  padding: 16px;
+  padding: 24px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   flex: 1;
+  max-width: 300px;
 }
 
 .faq-card img {
-  width: 60px;
+  width: 80px;
   height: auto;
   margin-bottom: 16px;
 }
 
 .faq-card h3 {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: 600;
   margin-bottom: 8px;
   color: #000;
@@ -740,7 +730,7 @@ a {
 }
 
 /*========================= 
- 11. Statistics Section
+ 10. Statistics Section
 =========================*/
 .statistics {
   background: #ffd95e;
@@ -786,7 +776,7 @@ a {
   background-color: rgba(255, 255, 255, 0.3);
 }
 /*========================= 
- 12. Footer
+ 11. Footer
 =========================*/
 .footer {
   width: 100%;  
@@ -1071,7 +1061,7 @@ body.modal-open {
 }
 
 /*========================= 
- 13. Responsive Styles
+ 12. Responsive Styles
 =========================*/
 @media screen and (max-width: 768px) {
   .footer-top {
@@ -1084,4 +1074,273 @@ body.modal-open {
     flex-direction: column;
     align-items: center;
   }
+}
+
+/*========================= 
+ 13. Delivery Location Page
+=========================*/
+.delivery-location-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 40px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.delivery-content {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  max-width: 1200px;
+  width: 100%;
+  min-height: 600px;
+  display: flex;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+}
+
+.delivery-form-section {
+  flex: 1;
+  padding: 60px 50px;
+  background: white;
+  min-width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.delivery-image-section {
+  flex: 1;
+  background: #f8f9fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  min-height: 500px;
+}
+
+.delivery-image-section .food-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.delivery-icon {
+  width: 40px;
+  height: 40px;
+  filter: hue-rotate(60deg) saturate(1.5) brightness(1.2);
+}
+
+.page-header h1 {
+  font-size: 32px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.delivery-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-row {
+  display: flex;
+  gap: 15px;
+}
+
+.form-row .form-group {
+  flex: 1;
+}
+
+.form-input {
+  width: 100%;
+  padding: 16px 20px;
+  border: 1px solid #e5e5e5;
+  border-radius: 50px;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background: white;
+}
+
+.form-input:focus {
+  border-color: #4ade80;
+  box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.1);
+}
+
+.form-input::placeholder {
+  color: #999;
+  font-weight: 400;
+}
+
+.form-textarea {
+  border-radius: 16px;
+  resize: vertical;
+  min-height: 80px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.confirm-btn {
+  background: #4ade80;
+  color: white;
+  border: none;
+  padding: 18px 24px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+.confirm-btn:hover {
+  background: #22c55e;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(74, 222, 128, 0.3);
+}
+
+.btn-icon {
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) invert(1);
+}
+
+.back-section {
+  margin-top: 30px;
+  text-align: left;
+}
+
+.back-link {
+  color: #4ade80;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.back-link:hover {
+  color: #22c55e;
+  text-decoration: underline;
+}
+
+/* Responsive Design for Delivery Location Page */
+@media (max-width: 768px) {
+  .delivery-location-page {
+    padding: 20px 10px;
+  }
+  
+  .delivery-content {
+    flex-direction: column;
+    max-width: 95%;
+    min-height: auto;
+  }
+  
+  .delivery-form-section {
+    min-width: auto;
+    padding: 40px 30px;
+  }
+  
+  .delivery-image-section {
+    min-height: 250px;
+    padding: 30px;
+  }
+  
+  .page-header h1 {
+    font-size: 28px;
+  }
+  
+  .form-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .delivery-icon {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+/*========================= 
+ 9. Popular Restaurants Section (Copy of Categories)
+=========================*/
+.popular-restaurants {
+  padding: 40px;
+  background-color: #fff;
+}
+
+.popular-restaurants-title {
+  font-size: 2.4rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.popular-restaurants-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+}
+
+.popular-restaurant-card {
+  background: #fbfbfb;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.popular-restaurant-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  text-decoration: none;
+  color: inherit;
+}
+
+.popular-restaurant-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.popular-restaurant-info {
+  padding: 16px;
+  text-align: center;
+}
+
+.popular-restaurant-info h3 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #000;
+}
+
+.popular-restaurant-info p {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #ffd95e;
 }

@@ -1,0 +1,1459 @@
+/*========================= 
+ Restaurant Menu Page Styles
+=========================*/
+
+/* Hide ALL old restaurant header elements */
+.restaurant-header,
+.restaurant-banner,
+.restaurant-info,
+.restaurant-details,
+.restaurant-meta,
+.meta-item,
+.restaurant-hours,
+.restaurant-rating,
+.rating-card,
+.restaurant-image {
+  display: none !important;
+}
+
+/* Restaurant Banner Component */
+.restaurant-banner-section {
+  padding: 20px !important;
+  margin: 100px auto 40px auto !important;
+  max-width: 1200px !important;
+  display: block !important;
+  visibility: visible !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.restaurant-card {
+  width: 100% !important;
+  height: 400px !important;
+  border-radius: 24px !important;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/img/huongquequan_banner.png') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  padding: 0 !important;
+  position: relative !important;
+  overflow: hidden !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  padding-right: 40px !important;
+  visibility: visible !important;
+  z-index: 2 !important;
+}
+
+/* Override any ::before pseudo-element */
+.restaurant-card::before {
+  display: none !important;
+}
+
+.restaurant-card .content-left {
+  position: absolute !important;
+  top: 144px !important;
+  left: 58px !important;
+  max-width: 400px !important;
+  z-index: 3 !important;
+  display: block !important;
+  visibility: visible !important;
+}
+
+.restaurant-card .restaurant-name {
+  color: #FFF !important;
+  font-family: "Poppins", sans-serif !important;
+  font-size: 42px !important;
+  font-style: normal !important;
+  font-weight: 600 !important;
+  line-height: 1.2 !important;
+  margin-bottom: 38px !important;
+  letter-spacing: -0.02em !important;
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+  display: block !important;
+  visibility: visible !important;
+  text-align: left !important;
+  margin-top: 0 !important;
+  width: 100% !important;
+  clear: both !important;
+  float: none !important;
+}
+
+.restaurant-card .info-badges {
+  display: block !important;
+  visibility: visible !important;
+  width: 100% !important;
+  clear: both !important;
+  margin-top: 0 !important;
+}
+
+.restaurant-card .badge {
+  display: block !important;
+  margin-bottom: 12px !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 50px !important;
+  padding: 12px 24px !important;
+  color: #FFF !important;
+  font-family: "Poppins", sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  transition: all 0.3s ease !important;
+  width: fit-content !important;
+  max-width: 280px !important;
+  height: 96px !important;
+  display: flex !important;
+  align-items: center !important;
+  visibility: visible !important;
+  float: none !important;
+  clear: both !important;
+}
+
+.restaurant-card .badge-icon {
+  width: 20px !important;
+  height: 20px !important;
+  opacity: 0.9 !important;
+  display: inline-block !important;
+  vertical-align: middle !important;
+  margin-right: 12px !important;
+}
+
+.restaurant-card .content-right {
+  position: relative !important;
+  z-index: 2 !important;
+  display: block !important;
+  visibility: visible !important;
+  flex: 0 0 auto !important;
+}
+
+.restaurant-card .food-showcase {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+  width: 320px;
+  height: 240px;
+}
+
+.restaurant-card .food-showcase:hover {
+  transform: scale(1.02);
+}
+
+.restaurant-card .food-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.restaurant-card .rating-overlay {
+  position: absolute !important;
+  top: 16px !important;
+  left: 16px !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(10px) !important;
+  border-radius: 12px !important;
+  padding: 12px 16px !important;
+  text-align: center !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15) !important;
+  min-width: 70px !important;
+}
+
+.restaurant-card .rating-score {
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  color: #2d2d2d !important;
+  margin-bottom: 4px !important;
+  font-family: "Poppins", sans-serif !important;
+  line-height: 1 !important;
+}
+
+.restaurant-card .rating-stars {
+  font-size: 12px !important;
+  color: #FFD700 !important;
+  margin-bottom: 4px !important;
+  display: block !important;
+}
+
+.restaurant-card .rating-reviews {
+  font-size: 11px !important;
+  color: #666 !important;
+  font-family: "Poppins", sans-serif !important;
+  font-weight: 500 !important;
+}
+
+/* Responsive Design for Restaurant Banner */
+@media (max-width: 1024px) {
+  .restaurant-card {
+    height: 350px;
+    padding: 32px;
+    gap: 32px;
+  }
+  
+  .restaurant-card .restaurant-name {
+    font-size: 40px !important;
+    margin-bottom: 24px !important;
+  }
+  
+  .restaurant-card .food-showcase {
+    width: 280px;
+    height: 210px;
+  }
+}
+
+@media (max-width: 768px) {
+  .restaurant-banner-section {
+    padding: 16px;
+    margin: 80px auto 30px auto;
+  }
+  
+  .restaurant-card {
+    height: auto;
+    min-height: 300px;
+    flex-direction: column;
+    padding: 24px;
+    gap: 24px;
+    text-align: center;
+  }
+  
+/*========================= 
+ Restaurant Menu Page Styles
+=========================*/
+
+/* Hide ALL old restaurant header elements */
+.restaurant-header,
+.restaurant-banner,
+.restaurant-info,
+.restaurant-details,
+.restaurant-meta,
+.meta-item,
+.restaurant-hours,
+.restaurant-rating,
+.rating-card,
+.restaurant-image {
+  display: none !important;
+}
+
+/* Restaurant Banner Component */
+.restaurant-banner-section {
+  padding: 20px !important;
+  margin: 100px auto 40px auto !important;
+  max-width: 1200px !important;
+  display: block !important;
+  visibility: visible !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.restaurant-card {
+  width: 100% !important;
+  height: 400px !important;
+  border-radius: 24px !important;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/img/huongquequan_banner.png') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  padding: 0 !important;
+  position: relative !important;
+  overflow: hidden !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  padding-right: 40px !important;
+  visibility: visible !important;
+  z-index: 2 !important;
+}
+
+/* Override any ::before pseudo-element */
+.restaurant-card::before {
+  display: none !important;
+}
+
+.restaurant-card .content-left {
+  position: absolute !important;
+  top: 144px !important;
+  left: 58px !important;
+  max-width: 400px !important;
+  z-index: 3 !important;
+  display: block !important;
+  visibility: visible !important;
+}
+
+.restaurant-card .restaurant-name {
+  color: #FFF !important;
+  font-family: "Poppins", sans-serif !important;
+  font-size: 42px !important;
+  font-style: normal !important;
+  font-weight: 600 !important;
+  line-height: 1.2 !important;
+  margin-bottom: 38px !important;
+  letter-spacing: -0.02em !important;
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+  display: block !important;
+  visibility: visible !important;
+  text-align: left !important;
+  margin-top: 0 !important;
+  width: 100% !important;
+  clear: both !important;
+  float: none !important;
+}
+
+.restaurant-card .info-badges {
+  display: block !important;
+  visibility: visible !important;
+  width: 100% !important;
+  clear: both !important;
+  margin-top: 0 !important;
+}
+
+.restaurant-card .badge {
+  display: block !important;
+  margin-bottom: 12px !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 50px !important;
+  padding: 12px 24px !important;
+  color: #FFF !important;
+  font-family: "Poppins", sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  transition: all 0.3s ease !important;
+  width: fit-content !important;
+  max-width: 280px !important;
+  visibility: visible !important;
+  float: none !important;
+  clear: both !important;
+}
+
+.restaurant-card .badge-icon {
+  width: 20px !important;
+  height: 20px !important;
+  opacity: 0.9 !important;
+  display: inline-block !important;
+  vertical-align: middle !important;
+  margin-right: 12px !important;
+}
+
+.restaurant-card .content-right {
+  position: relative !important;
+  z-index: 2 !important;
+  display: block !important;
+  visibility: visible !important;
+  flex: 0 0 auto !important;
+}
+
+.restaurant-card .food-showcase {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+  width: 320px;
+  height: 240px;
+}
+
+.restaurant-card .food-showcase:hover {
+  transform: scale(1.02);
+}
+
+.restaurant-card .food-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.restaurant-card .rating-overlay {
+  position: absolute !important;
+  top: 16px !important;
+  left: 16px !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(10px) !important;
+  border-radius: 12px !important;
+  padding: 12px 16px !important;
+  text-align: center !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15) !important;
+  min-width: 70px !important;
+}
+
+.restaurant-card .rating-score {
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  color: #2d2d2d !important;
+  margin-bottom: 4px !important;
+  font-family: "Poppins", sans-serif !important;
+  line-height: 1 !important;
+}
+
+.restaurant-card .rating-stars {
+  font-size: 12px !important;
+  color: #FFD700 !important;
+  margin-bottom: 4px !important;
+  display: block !important;
+}
+
+.restaurant-card .rating-reviews {
+  font-size: 11px !important;
+  color: #666 !important;
+  font-family: "Poppins", sans-serif !important;
+  font-weight: 500 !important;
+}
+
+/* Responsive Design for Restaurant Banner */
+@media (max-width: 1024px) {
+  .restaurant-card {
+    height: 350px;
+    padding: 32px;
+    gap: 32px;
+  }
+  
+  .restaurant-card .restaurant-name {
+    font-size: 40px !important;
+    margin-bottom: 24px !important;
+  }
+  
+  .restaurant-card .food-showcase {
+    width: 280px;
+    height: 210px;
+  }
+}
+
+@media (max-width: 768px) {
+  .restaurant-banner-section {
+    padding: 16px;
+    margin: 80px auto 30px auto;
+  }
+  
+  .restaurant-card {
+    height: auto;
+    min-height: 300px;
+    flex-direction: column;
+    padding: 24px;
+    gap: 24px;
+    text-align: center;
+  }
+  
+  .restaurant-card .restaurant-name {
+    font-size: 32px !important;
+    margin-bottom: 20px !important;
+  }
+  
+  .restaurant-card .info-badges {
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .restaurant-card .badge {
+    font-size: 13px;
+    padding: 10px 20px;
+  }
+  
+  .restaurant-card .food-showcase {
+    width: 100%;
+    max-width: 320px;
+    height: 240px;
+  }
+}
+
+@media (max-width: 480px) {
+  .restaurant-card {
+    padding: 20px;
+    gap: 20px;
+  }
+  
+  .restaurant-card .restaurant-name {
+    font-size: 28px !important;
+    margin-bottom: 16px !important;
+  }
+  
+  .restaurant-card .badge {
+    font-size: 12px;
+    padding: 8px 16px;
+  }
+  
+  .restaurant-card .badge-icon {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .restaurant-card .food-showcase {
+    width: 100%;
+    max-width: 280px;
+    height: 200px;
+  }
+  
+  .restaurant-card .rating-overlay {
+    padding: 10px 12px;
+  }
+  
+  .restaurant-card .rating-score {
+    font-size: 18px !important;
+  }
+  
+  .restaurant-card .rating-reviews {
+    font-size: 10px !important;
+  }
+}
+
+/* Menu Search Section */
+.menu-search {
+  max-width: 1200px;
+  margin: 0 auto 30px;
+  padding: 0 20px;
+}
+
+.search-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+
+.search-container h2 {
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: #423C3C;
+}
+
+.search-box {
+  display: flex;
+  background: #f8f9fa;
+  border-radius: 25px;
+  padding: 5px;
+  min-width: 300px;
+}
+
+.menu-search-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 12px 20px;
+  font-size: 1.4rem;
+  outline: none;
+}
+
+.search-btn {
+  background: #FFD95E;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.search-btn:hover {
+  background: #FFD95E;
+  transform: scale(1.05);
+}
+
+/* Category Navigation */
+.category-nav {
+  background: #FFD95E;
+  padding: 15px 0;
+  margin-bottom: 30px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  overflow-x: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.category-tabs {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.category-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.category-tab {
+  background: transparent;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #423C3C;
+  cursor: pointer;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.category-tab:hover,
+.category-tab.active {
+  background: #423C3C;
+  color: white;
+}
+
+/* Promotional Offers */
+.promotional-offers {
+  max-width: 1200px;
+  margin: 0 auto 40px;
+  padding: 0 20px;
+  display: block;
+}
+
+.offers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.offer-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.offer-card:hover {
+  transform: translateY(-5px);
+}
+
+.offer-image {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.offer-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.discount-badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: #423C3C;
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.offer-content {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.offer-location {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.offer-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #423C3C;
+}
+
+.add-offer-btn {
+  background: #FFD95E;
+  border: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  font-size: 2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.add-offer-btn:hover {
+  background: #FFD95E;
+  transform: scale(1.1);
+}
+
+/* Menu Items Section */
+.menu-items {
+  max-width: 1200px;
+  margin: 0 auto 40px;
+  padding: 0 20px;
+  display: block;
+}
+
+.menu-section-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #FFD95E;
+  margin-bottom: 30px;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.menu-item {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  overflow: hidden;
+  position: relative;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-item:hover {
+  transform: translateY(-3px);
+}
+
+.item-image {
+  width: 100%;
+  height: 120px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.item-details {
+  padding: 15px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.item-name {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #423C3C;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.item-description {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.4;
+  margin-bottom: 15px;
+  flex: 1;
+}
+
+.item-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item-price {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #423C3C;
+}
+
+.add-to-cart-btn {
+  background: #423C3C;
+  border: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-to-cart-btn:hover {
+  background: #FFD95E;
+  color: #423C3C;
+  transform: scale(1.1);
+}
+
+/* Customer Reviews Section */
+.customer-reviews {
+  background: white;
+  padding: 60px 0;
+  margin-top: 40px;
+}
+
+.reviews-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.reviews-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #423C3C;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.reviews-stats {
+  display: flex;
+  gap: 60px;
+  margin-bottom: 50px;
+  align-items: center;
+  justify-content: center;
+}
+
+.overall-rating {
+  text-align: center;
+}
+
+.overall-rating .rating-score {
+  font-size: 4.8rem;
+  font-weight: 700;
+  color: #423C3C;
+  margin-bottom: 10px;
+}
+
+.overall-rating .rating-stars {
+  font-size: 2.4rem;
+  color: #FFD95E;
+  margin-bottom: 10px;
+}
+
+.overall-rating .rating-text {
+  font-size: 1.4rem;
+  color: #666;
+}
+
+.rating-breakdown {
+  flex: 1;
+  max-width: 400px;
+}
+
+.rating-bar {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 12px;
+}
+
+.star-count {
+  min-width: 30px;
+  font-size: 1.4rem;
+  color: #423C3C;
+  font-weight: 500;
+}
+
+.bar {
+  flex: 1;
+  height: 8px;
+  background: #f0f0f0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.bar .fill {
+  height: 100%;
+  background: #FFD95E;
+  border-radius: 4px;
+  transition: width 0.6s ease;
+}
+
+.percentage {
+  min-width: 35px;
+  font-size: 1.3rem;
+  color: #666;
+  text-align: right;
+}
+
+.reviews-list {
+  margin-bottom: 40px;
+}
+
+.review-card {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-2px);
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.reviewer-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.reviewer-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.reviewer-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.reviewer-name {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #423C3C;
+  margin-bottom: 5px;
+}
+
+.review-rating {
+  color: #FFD95E;
+  font-size: 1.4rem;
+}
+
+.review-date {
+  font-size: 1.3rem;
+  color: #666;
+}
+
+.review-text {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.review-actions {
+  display: flex;
+  gap: 15px;
+}
+
+.helpful-btn,
+.reply-btn {
+  background: transparent;
+  border: 1px solid #ddd;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.helpful-btn:hover,
+.reply-btn:hover {
+  background: #FFD95E;
+  border-color: #FFD95E;
+  color: #423C3C;
+}
+
+.load-more-reviews {
+  display: block;
+  margin: 0 auto;
+  background: #423C3C;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 25px;
+  font-size: 1.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.load-more-reviews:hover {
+  background: #FFD95E;
+  color: #423C3C;
+  transform: translateY(-2px);
+}
+
+/* Similar Restaurants Section */
+.similar-restaurants {
+  background: #f8f9fa;
+  padding: 60px 0;
+}
+
+.similar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.similar-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #423C3C;
+  margin-bottom: 40px;
+}
+
+.restaurants-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.restaurant-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.restaurant-card:hover {
+  transform: translateY(-5px);
+}
+
+.restaurant-logo {
+  width: 120px;
+  height: 80px;
+  margin: 0 auto 15px;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.restaurant-logo.mcdonalds {
+  background: #FFD95E;
+}
+
+.restaurant-logo.papa-johns {
+  background: #00a859;
+}
+
+.restaurant-logo.kfc {
+  background: #e4002b;
+}
+
+.restaurant-logo.texas-chicken {
+  background: #1e3c72;
+}
+
+.restaurant-logo.burger-king {
+  background: #ec7c26;
+}
+
+.restaurant-logo.shaurma {
+  background: #ff8c00;
+}
+
+.restaurant-logo img {
+  max-width: 80%;
+  max-height: 80%;
+  object-fit: contain;
+}
+
+.restaurant-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #423C3C;
+  background: #FFD95E;
+  padding: 8px 12px;
+  border-radius: 20px;
+  margin: 0;
+}
+
+/* Delivery Information Section */
+.delivery-info {
+  background: #f8f9fa;
+  padding: 60px 0;
+  margin-top: 60px;
+}
+
+.delivery-container {
+  max-width: 1528px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.delivery-content {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  display: flex;
+  height: 659px;
+  width: 1528px;
+  margin: 0 auto;
+}
+
+.delivery-left {
+  width: 1032px;
+  height: 659px;
+  padding: 40px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.delivery-right {
+  background: #423C3C;
+  color: white;
+  width: 496px;
+  height: 659px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.delivery-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #423C3C;
+  margin-bottom: 30px;
+}
+
+.delivery-schedule {
+  margin-bottom: 30px;
+}
+
+.schedule-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.schedule-item:last-child {
+  border-bottom: none;
+  font-weight: 600;
+  padding-top: 20px;
+}
+
+.day {
+  font-weight: 600;
+  color: #423C3C;
+  min-width: 120px;
+}
+
+.hours {
+  color: #666;
+  text-align: right;
+}
+
+.delivery-contact {
+  border-top: 1px solid #eee;
+  padding-top: 30px;
+}
+
+.dietary-info {
+  font-size: 1.4rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.contact-item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.contact-label {
+  font-weight: 600;
+  color: #423C3C;
+  margin-bottom: 5px;
+}
+
+.contact-value {
+  color: #666;
+  font-size: 1.4rem;
+}
+
+.delivery-schedule-dark .schedule-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.delivery-schedule-dark .day {
+  color: white;
+}
+
+.delivery-schedule-dark .hours {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Map Section */
+.map-section {
+  padding: 60px 0;
+  background: #f8f9fa;
+}
+
+.map-container {
+  max-width: 1528px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  width: 1528px;
+  height: 659px;
+}
+
+.map-overlay {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  z-index: 10;
+  width: 520px;
+  height: 380px;
+}
+
+.restaurant-location-card {
+  background: #423C3C;
+  color: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  width: 520px;
+  height: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.location-title {
+  font-size: 3.0rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+
+.location-subtitle {
+  font-size: 1.9rem;
+  opacity: 0.8;
+  margin-bottom: 25px;
+  line-height: 1.3;
+}
+
+.location-address {
+  font-size: 1.6rem;
+  line-height: 1.4;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+.location-contact .contact-item {
+  margin-bottom: 15px;
+}
+
+.location-contact .contact-label {
+  color: white;
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 1.5rem;
+}
+
+.location-contact .contact-value {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.7rem;
+  line-height: 1.3;
+}
+
+.map-iframe {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  width: 1528px;
+  height: 659px;
+}
+
+.map-iframe iframe {
+  width: 1528px;
+  height: 659px;
+  border: none;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+  .menu-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  
+  .restaurant-banner,
+  .search-container,
+  .category-tabs,
+  .offers-grid,
+  .reviews-container,
+  .similar-container,
+  .delivery-container,
+  .map-container {
+    max-width: 100%;
+    padding: 0 15px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .restaurant-banner {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+  
+  .restaurant-info {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .restaurant-meta {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .search-container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+  }
+  
+  .search-box {
+    min-width: auto;
+  }
+  
+  .menu-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .menu-item {
+    min-height: 200px;
+  }
+  
+  .item-image {
+    height: 140px;
+  }
+  
+  .item-details {
+    padding: 15px;
+  }
+  
+  .add-to-cart-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 2rem;
+  }
+  
+  .offers-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .reviews-stats {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .restaurants-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .delivery-content {
+    flex-direction: column;
+  }
+  
+  .delivery-right {
+    min-width: auto;
+  }
+  
+  .map-overlay {
+    position: static;
+    margin-bottom: 20px;
+    max-width: none;
+  }
+  
+  .schedule-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+  
+  .hours {
+    text-align: left !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .restaurant-name {
+    font-size: 2.4rem;
+  }
+  
+  .category-tabs {
+    gap: 10px;
+  }
+  
+  .category-tab {
+    padding: 8px 15px;
+    font-size: 1.2rem;
+  }
+  
+  .menu-section-title {
+    font-size: 2.2rem;
+  }
+  
+  .restaurants-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .delivery-left,
+  .delivery-right {
+    padding: 20px;
+  }
+  
+  .delivery-title {
+    font-size: 2.2rem;
+  }
+  
+  .location-title {
+    font-size: 2rem;
+  }
+  
+  .reviews-title,
+  .similar-title {
+    font-size: 2.2rem;
+  }
+  
+  .overall-rating .rating-score {
+    font-size: 3.6rem;
+  }
+} 

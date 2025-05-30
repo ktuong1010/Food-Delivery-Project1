@@ -20,42 +20,38 @@ class homeController {
             },
             exclusiveDeals: [
             {
-                image: '/img/deals/burgers.jpg',
-                alt: 'Chef Burgers London',
+                image: '/img/Exclusive deals for burgers.svg',
+                alt: 'For Burgers',
                 discount: '-40%',
                 type: 'Restaurant',
-                name: 'Chef Burgers London'
+                name: 'For Burgers'
             },
             {
-                image: '/img/deals/salad.jpg',
-                alt: 'Grand Ai Cafe London',
+                image: '/img/exclusive deal for First order.svg',
+                alt: 'First Order',
                 discount: '-20%',
                 type: 'Restaurant',
-                name: 'Grand Ai Cafe London'
-            },
-            {
-                image: '/img/deals/sandwich.jpg',
-                alt: 'Butterbrot Cafe London',
-                discount: '-17%',
-                type: 'Restaurant',
-                name: 'Butterbrot Cafe London'
+                name: 'First Order'
             }
             ],
             categories: [
-            { image: '/img/burgers.jpg', name: 'Burgers & Fast food', count: 21 },
-            { image: '/img/salads.jpg', name: 'Salads', count: 32 },
-            { image: '/img/pasta.jpg', name: 'Pasta & Casuals', count: 4 },
-            { image: '/img/pizza.jpg', name: 'Pizza', count: 32 },
-            { image: '/img/breakfast.jpg', name: 'Breakfast', count: 4 },
-            { image: '/img/soups.jpg', name: 'Soups', count: 32 }
+            { image: '/img/categories/burger-and-fastfood.svg', name: 'Burgers & Fast food', count: 21 },
+            { image: '/img/categories/salads.svg', name: 'Salads', count: 32 },
+            { image: '/img/categories/pasta.svg', name: 'Pasta & Casuals', count: 4 },
+            { image: '/img/categories/pizza.svg', name: 'Pizza', count: 32 },
+            { image: '/img/categories/breakfast.svg', name: 'Breakfast', count: 4 },
+            { image: '/img/categories/soups.svg', name: 'Soups', count: 32 }
             ],
             restaurants: [
-            { image: '/img/restaurants/mcdonalds.jpg', name: "McDonald's London" },
-            { image: '/img/restaurants/papajohns.jpg', name: "Papa Johns" },
-            { image: '/img/restaurants/kfc.jpg', name: "KFC West London" },
-            { image: '/img/restaurants/texas-chicken.jpg', name: "Texas Chicken" },
-            { image: '/img/restaurants/burger-king.jpg', name: "Burger King" },
-            { image: '/img/restaurants/shaurma.jpg', name: "Shaurma 1" }
+            { 
+                image: '/img/restaurants/huongquequan.png', 
+                name: "Hương Quê Quán",
+                link: '/restaurant' // Add link to navigate to restaurant page
+            },
+            { image: '/img/restaurants/kfc-binh-duong.png', name: "KFC Bình Dương" },
+            { image: '/img/restaurants/life-coffee.jpg', name: "Life Coffee" },
+            { image: '/img/restaurants/pho-viet-huong.jpg', name: "Phở Việt Hương" },
+            { image: '/img/restaurants/burger-king-binh-duong.avif', name: "Burger King Bình Dương" }
             ],
             statistics: [
             { number: '546+', label: 'Registered Riders' },
@@ -94,42 +90,38 @@ class homeController {
             },
             exclusiveDeals: [
             {
-                image: '/img/deals/burgers.jpg',
-                alt: 'Chef Burgers London',
+                image: '/img/Exclusive deals for burgers.svg',
+                alt: 'For Burgers',
                 discount: '-40%',
                 type: 'Restaurant',
-                name: 'Chef Burgers London'
+                name: 'For Burgers'
             },
             {
-                image: '/img/deals/salad.jpg',
-                alt: 'Grand Ai Cafe London',
+                image: '/img/exclusive deal for First order.svg',
+                alt: 'First Order',
                 discount: '-20%',
                 type: 'Restaurant',
-                name: 'Grand Ai Cafe London'
-            },
-            {
-                image: '/img/deals/sandwich.jpg',
-                alt: 'Butterbrot Cafe London',
-                discount: '-17%',
-                type: 'Restaurant',
-                name: 'Butterbrot Cafe London'
+                name: 'First Order'
             }
             ],
             categories: [
-            { image: '/img/burger.avif', name: 'Burgers & Fast food', count: 21 },
-            { image: '/img/salads.jpg', name: 'Salads', count: 32 },
-            { image: '/img/pasta.jpg', name: 'Pasta & Casuals', count: 4 },
-            { image: '/img/pizza.jpg', name: 'Pizza', count: 32 },
-            { image: '/img/breakfast.jpg', name: 'Breakfast', count: 4 },
-            { image: '/img/soups.jpg', name: 'Soups', count: 32 }
+            { image: '/img/categories/burger-and-fastfood.svg', name: 'Burgers & Fast food', count: 21 },
+            { image: '/img/categories/salads.svg', name: 'Salads', count: 32 },
+            { image: '/img/categories/pasta.svg', name: 'Pasta & Casuals', count: 4 },
+            { image: '/img/categories/pizza.svg', name: 'Pizza', count: 32 },
+            { image: '/img/categories/breakfast.svg', name: 'Breakfast', count: 4 },
+            { image: '/img/categories/soups.svg', name: 'Soups', count: 32 }
             ],
             restaurants: [
-            { image: '/img/restaurants/mcdonalds.jpg', name: "McDonald's London" },
-            { image: '/img/restaurants/papajohns.jpg', name: "Papa Johns" },
-            { image: '/img/restaurants/kfc.jpg', name: "KFC West London" },
-            { image: '/img/restaurants/texas-chicken.jpg', name: "Texas Chicken" },
-            { image: '/img/restaurants/burger-king.jpg', name: "Burger King" },
-            { image: '/img/restaurants/shaurma.jpg', name: "Shaurma 1" }
+            { 
+                image: '/img/restaurants/huongquequan.png', 
+                name: "Hương Quê Quán",
+                link: '/restaurant' // Add link to navigate to restaurant page
+            },
+            { image: '/img/restaurants/kfc-binh-duong.png', name: "KFC Bình Dương" },
+            { image: '/img/restaurants/life-coffee.jpg', name: "Life Coffee" },
+            { image: '/img/restaurants/pho-viet-huong.jpg', name: "Phở Việt Hương" },
+            { image: '/img/restaurants/burger-king-binh-duong.avif', name: "Burger King Bình Dương" }
             ],
             statistics: [
             { number: '546+', label: 'Registered Riders' },
@@ -224,6 +216,85 @@ class homeController {
             res.status(500).render('error', {
                 layout: 'public', // Use a public layout for error pages
                 message: 'An error occurred while loading the menu. Please try again later.',
+            });
+        }
+    }
+
+    async restaurantMenu(req, res) {
+        try {
+            // Check if the user is logged in
+            // if (!req.session.user) {
+            //     return res.redirect('/login'); // Redirect to login if not logged in
+            // }
+
+            // Render the restaurant menu view
+            res.render('restaurant-menu', {
+                layout: 'user', // Use the user layout
+                currentPath: req.path, // Pass the current path for active link highlighting
+                user: {
+                    location: 'Regent Street, A4, A4201, London'
+                },
+                cart: {
+                    items: 23,
+                    total: '79.89'
+                }
+            });
+        } catch (error) {
+            // Log the error for debugging
+            console.error('Error in restaurantMenu:', error);
+
+            // Render an error page or send a user-friendly error message
+            res.status(500).render('error', {
+                layout: 'public', // Use a public layout for error pages
+                message: 'An error occurred while loading the restaurant menu. Please try again later.',
+            });
+        }
+    }
+
+    // Delivery location page
+    async deliveryLocation(req, res) {
+        try {
+            res.render('delivery-location', {
+                title: 'Delivery Location - Food Ordering Website',
+                layout: 'minimal', // Use the minimal layout without header and top bar
+                currentPath: req.path
+            });
+        } catch (error) {
+            console.error('Error in deliveryLocation:', error);
+            res.status(500).send('Internal server error');
+        }
+    }
+
+    // Update location handler
+    async updateLocation(req, res) {
+        try {
+            const { address, city, postcode, district, subdistrict, note } = req.body;
+            
+            // Validate required fields
+            if (!city || !postcode || !district || !subdistrict) {
+                return res.status(400).render('delivery-location', {
+                    title: 'Delivery Location - Food Ordering Website',
+                    layout: 'user',
+                    error: 'Please fill in all required fields',
+                    formData: req.body
+                });
+            }
+
+            // Here you would typically save the location to database/session
+            // For now, we'll just update the session
+            if (req.session.user) {
+                req.session.user.location = `${district}, ${city} ${postcode}`;
+            }
+
+            // Redirect back with success message
+            res.redirect('/?success=Location updated successfully');
+            
+        } catch (error) {
+            console.error('Error in updateLocation:', error);
+            res.status(500).render('delivery-location', {
+                title: 'Delivery Location - Food Ordering Website',
+                layout: 'user',
+                error: 'An error occurred while updating your location'
             });
         }
     }

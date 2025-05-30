@@ -1,13 +1,28 @@
 <section class="popular-restaurants">
   <div class="main-content">
-    <h2 class="section-title">Popular Restaurants</h2>
-    <div class="restaurants-grid">
+    <h2 class="popular-restaurants-title">
+      Popular Restaurants
+    </h2>
+    <div class="popular-restaurants-grid">
       {{#each restaurants}}
-        <div class="restaurant-card">
-          <img src="{{this.image}}" alt="{{this.name}}" />
-          <p>{{this.name}}</p>
-        </div>
+        {{#if this.link}}
+          <a href="{{this.link}}" class="popular-restaurant-card">
+            <img src="{{this.image}}" alt="{{this.name}}" />
+            <div class="popular-restaurant-info">
+              <h3>{{this.name}}</h3>
+              <p>Delivery in 20-25 min</p>
+            </div>
+          </a>
+        {{else}}
+          <div class="popular-restaurant-card">
+            <img src="{{this.image}}" alt="{{this.name}}" />
+            <div class="popular-restaurant-info">
+              <h3>{{this.name}}</h3>
+              <p>Delivery in 20-25 min</p>
+            </div>
+          </div>
+        {{/if}}
       {{/each}}
     </div>
   </div>
-</section>
+</section> 

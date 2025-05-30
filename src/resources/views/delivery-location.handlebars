@@ -1,0 +1,53 @@
+<!-- Delivery Location Page -->
+<div class="delivery-location-page">
+  <div class="delivery-content">
+    <!-- Left side - Form -->
+    <div class="delivery-form-section">
+      <div class="page-header">
+        <img src="/img/Delivery Scooter.svg" alt="Delivery Scooter" class="delivery-icon" />
+        <h1>Delivery location</h1>
+      </div>
+      
+      <form class="delivery-form" action="/update-location" method="POST">
+        <div class="form-group">
+          <input type="text" name="address" placeholder="Address(optional)" class="form-input" />
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <input type="text" name="city" placeholder="City" class="form-input" required />
+          </div>
+          <div class="form-group">
+            <input type="text" name="postcode" placeholder="Postcode" class="form-input" required />
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <input type="text" name="district" placeholder="District" class="form-input" required />
+        </div>
+        
+        <div class="form-group">
+          <input type="text" name="subdistrict" placeholder="Sub-district/Village" class="form-input" required />
+        </div>
+        
+        <div class="form-group">
+          <textarea name="note" placeholder="Note (Optional)" class="form-input form-textarea" rows="3"></textarea>
+        </div>
+        
+        <button type="submit" class="confirm-btn">
+          <img src="/img/Delivery Scooter.svg" alt="Delivery" class="btn-icon" />
+          Confirm
+        </button>
+      </form>
+      
+      <div class="back-section">
+        <a href="javascript:history.back()" class="back-link">Back</a>
+      </div>
+    </div>
+    
+    <!-- Right side - Food Image -->
+    <div class="delivery-image-section">
+      <img src="/img/food image 2.svg" alt="Delicious Food" class="food-image" />
+    </div>
+  </div>
+</div> 

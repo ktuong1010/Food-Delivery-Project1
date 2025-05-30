@@ -33,7 +33,7 @@ function registerFunction(){
 const navLinkEls = document.querySelectorAll('.nav-link:not(.dropdown-toggle)');
 navLinkEls.forEach(navLinkEl => {
     navLinkEl.addEventListener("click", (e) => {
-        // Prevent default navigation if needed (e.g., for SPA behavior)
+        // Prevent default navigation if needed 
         // e.preventDefault();
         document.querySelector(".active")?.classList.remove("active");
         navLinkEl.classList.add("active");
