@@ -1,24 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     // ====== Navigation Menu ======
-    const navLinks = document.querySelectorAll('.nav-link');
-    
-    // Set active navigation link
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            // Check if the link has a valid href (not "#" or empty)
-            if (this.getAttribute('href') === '#' || !this.getAttribute('href')) {
-                e.preventDefault(); // Prevent default only for non-navigational links
-            }
-
-            // Remove active class from all links
-            navLinks.forEach(navLink => {
-                navLink.classList.remove('active');
-            });
-
-            // Add active class to clicked link
-            this.classList.add('active');
-        });
-    });
+    // (Removed nav-link click handler to allow normal navigation)
 
     // ====== Hero Section Animations ======
     const notifications = document.querySelectorAll('.notification');
@@ -295,6 +277,84 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    // ====== Modal Logic for Login/Signup ======
+    const loginBtn = document.querySelector('.login-signup');
+    const loginModal = document.getElementById('loginModal');
+    const signupModal = document.getElementById('signupModal');
+    const closeLoginBtn = document.getElementById('closeModal');
+    const closeSignupBtn = document.getElementById('closeSignupModal');
+
+    // Open login modal
+    if (loginBtn && loginModal) {
+        loginBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            loginModal.classList.add('active');
+        });
+    }
+
+    // Close login modal
+    if (closeLoginBtn && loginModal) {
+        closeLoginBtn.addEventListener('click', function() {
+            loginModal.classList.remove('active');
+        });
+    }
+
+    // Close signup modal
+    if (closeSignupBtn && signupModal) {
+        closeSignupBtn.addEventListener('click', function() {
+            signupModal.classList.remove('active');
+        });
+    }
+
+    // Switch to signup modal from login modal
+    const switchToSignup = document.getElementById('switchToSignup');
+    if (switchToSignup && loginModal && signupModal) {
+        switchToSignup.addEventListener('click', function(e) {
+            e.preventDefault();
+            loginModal.classList.remove('active');
+            signupModal.classList.add('active');
+        });
+    }
+
+    // Switch to login modal from signup modal
+    const switchToLogin = document.getElementById('switchToLogin');
+    if (switchToLogin && loginModal && signupModal) {
+        switchToLogin.addEventListener('click', function(e) {
+            e.preventDefault();
+            signupModal.classList.remove('active');
+            loginModal.classList.add('active');
+        });
+    }
+
+    // Close modal when clicking outside the modal content
+    window.addEventListener('click', function(e) {
+        if (e.target === loginModal) {
+            loginModal.classList.remove('active');
+        }
+        if (e.target === signupModal) {
+            signupModal.classList.remove('active');
+        }
+    });
+
+    // ====== User Dropdown Logic ======
+    const userDropdownToggle = document.getElementById('userDropdownToggle');
+    const userDropdownMenu = document.getElementById('userDropdownMenu');
+
+    if (userDropdownToggle && userDropdownMenu) {
+        userDropdownToggle.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const isOpen = userDropdownMenu.style.display === 'block';
+            userDropdownMenu.style.display = isOpen ? 'none' : 'block';
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!userDropdownMenu.contains(e.target) && !userDropdownToggle.contains(e.target)) {
+                userDropdownMenu.style.display = 'none';
+            }
+        });
+    }
 
     // Initialize other components if needed
     console.log('Foodzie website initialized successfully!');

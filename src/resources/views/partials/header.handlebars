@@ -1,19 +1,27 @@
+{{#if (eq currentPath '/public-home')}}
 <header class="header fixed">
+{{else}}
+<header class="header">
+{{/if}}
   <div class="main-content">
-    <div class="body">
-      <a href="/public-home" class="logo-link">
-        <img src="/img/Logo-no-slogan 1.svg" alt="Foodzie Logo" class="logo" />
-      </a>
-      <nav class="nav">
+    <div class="header-row">
+      <div class="header-left">
+        <a href="/" class="logo-link">
+          <img src="/img/Logo-no-slogan 1.svg" alt="Foodzie Logo" class="logo" />
+        </a>
+      </div>
+      <nav class="header-center nav">
         <ul>
-          <li class="active"><a href="#!" class="nav-link active">Home</a></li>
-          <li><a href="#!" class="nav-link">Browse Menu</a></li>
-          <li><a href="#!" class="nav-link">Restaurants</a></li>
-          <li><a href="#!" class="nav-link">Track Order</a></li>
-          <li><a href="#!" class="nav-link">Support</a></li>
+          <li><a href="/" class="nav-link {{isActive currentPath '/public-home'}}">Home</a></li>
+          <li><a href="/#categories" class="nav-link">Browse Menu</a></li>
+          <li><a href="/#popular-restaurants" class="nav-link">Restaurants</a></li>
+          <li><a href="/track-order" class="nav-link {{isActive currentPath '/track-order'}}">Track Order</a></li>
+          <li><a href="/#about-us" class="nav-link">Support</a></li>
         </ul>
       </nav>
-      <a href="#!" class="login-signup">Login/Signup</a>
+      <div class="header-right">
+        <a href="#" class="login-signup">Login/Signup</a>
+      </div>
     </div>
   </div>
 </header>

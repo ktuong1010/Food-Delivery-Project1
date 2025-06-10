@@ -106,32 +106,38 @@
     </nav>
 </header> --}}
 
+{{#if (eq currentPath '/user')}}
 <header class="header fixed">
+{{else}}
+<header class="header">
+{{/if}}
   <div class="main-content">
-    <div class="body ">
-      <!-- Logo -->
-      <img src="/img/Logo-no-slogan 1.svg" alt="Foodzie Logo" class="logo mb-3" />
-
-      <!-- Navigation -->
+    <div class="body">
+      <a href="/user#home" class="logo-link">
+        <img src="/img/Logo-no-slogan 1.svg" alt="Foodzie Logo" class="logo" />
+      </a>
       <nav class="nav">
-        <ul class="nav ">
-          <li class="nav-item">
-              <a href="/user" class="nav-link px-2 {{isActive currentPath '/user'}}">Home</a>
-            </li>
-            <li class="nav-item">
-              <a href="/menu" class="nav-link px-2 {{isActive currentPath '/menu'}}">Browse Menu</a>
-            </li>
-            <li class="nav-item">
-              <a href="#!" class="nav-link px-2 {{isActive currentPath '/restaurants'}}">Restaurants</a>
-            </li>
-            <li class="nav-item">
-              <a href="/cart/cart" class="nav-link px-2 {{isActive currentPath '/cart'}}">Track Order</a>
-            </li>
-            <li class="nav-item">
-              <a href="#!" class="nav-link px-2 {{isActive currentPath '/support'}}">Support</a>
-            </li>
+        <ul>
+          <li><a href="/user#home" class="nav-link px-2 {{isActive currentPath '/user'}}">Home</a></li>
+          <li><a href="/user#categories" class="nav-link px-2 {{isActive currentPath '/menu'}}">Browse Menu</a></li>
+          <li><a href="/user#restaurants-popular" class="nav-link px-2 {{isActive currentPath '/restaurants'}}">Restaurants</a></li>
+          <li><a href="/track-order" class="nav-link px-2 {{isActive currentPath '/track-order'}}">Track Order</a></li>
+          <li><a href="/user#about" class="nav-link px-2 {{isActive currentPath '/support'}}">Support</a></li>
         </ul>
       </nav>
+      <div class="user-dropdown-container">
+        <div class="user-info" id="userDropdownToggle">
+          <span class="user-icon" style="display: inline-block; vertical-align: middle;"><img src="/img/user-icon.svg" alt="User" class="user-icon-img" style="width: 28px; vertical-align: middle;" /></span>
+          <span class="user-name" style="margin-left: 10px; vertical-align: middle;">{{username}}</span>
+          <span class="user-arrow" style="font-size: 20px; cursor: pointer;">&#9660;</span>
+        </div>
+        <div class="user-dropdown-menu" id="userDropdownMenu" style="display: none; position: absolute; right: 0; background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-radius: 8px; min-width: 180px; z-index: 1000;">
+          <a href="/profile/edit" class="dropdown-item">Profile</a>
+          <a href="/profile/history" class="dropdown-item">History</a>
+          <div class="dropdown-divider" style="height: 1px; background: #eee; margin: 8px 0;"></div>
+          <a href="/logout" class="dropdown-item">Logout</a>
+        </div>
+      </div>
     </div>
   </div>
 </header>

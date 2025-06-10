@@ -1,8 +1,11 @@
-<!-- Simple Restaurant Header -->
-<div class="restaurant-header" style="padding: 40px; text-align: center; background: #f8f9fa;">
-  <h1 style="font-size: 3rem; color: #333; margin-bottom: 10px;">Hương Quê Quán</h1>
-  <p style="color: #666; font-size: 1.6rem;">Vietnamese Restaurant • Delivery in 20-25 min</p>
-</div>
+<!-- Restaurant Hero Banner (below the main header) -->
+<section class="restaurant-hero-banner" style="position: relative; width: 100%; height: 320px; display: flex; align-items: center; justify-content: center; background: url('/img/huongquequan_banner.png') center/cover no-repeat; margin-bottom: 40px; overflow: hidden;">
+  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.45);"></div>
+  <div style="position: relative; z-index: 2; text-align: center; color: #fff;">
+    <h1 style="font-size: 3.6rem; font-weight: 900; margin-bottom: 12px; letter-spacing: 1px;">Hương Quê Quán</h1>
+    <p style="font-size: 1.8rem; font-weight: 500;">Vietnamese Restaurant • Delivery in 20-25 min</p>
+  </div>
+</section>
 
 <!-- Menu Search Section -->
 <section class="menu-search">
@@ -30,7 +33,7 @@
   <div class="offers-grid">
     <div class="offer-card">
       <div class="offer-image">
-        <img src="/assets/img/offer-1.jpg" alt="First Order Discount" />
+        <img src="/img/first order discount.svg" alt="First Order Discount" />
         <div class="discount-badge">-20%</div>
       </div>
       <div class="offer-content">
@@ -42,7 +45,7 @@
     
     <div class="offer-card">
       <div class="offer-image">
-        <img src="/assets/img/offer-3.jpg" alt="Free Ice Cream Offer" />
+        <img src="/img/Free ice cream.svg" alt="Free Ice Cream Offer" />
         <div class="discount-badge">-100%</div>
       </div>
       <div class="offer-content">
@@ -108,41 +111,26 @@
   <div class="menu-grid">
     <div class="menu-item">
       <div class="item-image">
-        <img src="/assets/img/fries-large.jpg" alt="Nước Suối" />
+        <img src="/img/nuoc suoi.jpg" alt="Nước Suối (Chai)" />
       </div>
       <div class="item-details">
-        <h3 class="item-name">Nước Suối</h3>
-        <p class="item-description">Refreshing bottled water, pure and clean</p>
+        <h3 class="item-name">Nước Suối (Chai)</h3>
+        <p class="item-description">Bottled mineral water, served cold</p>
         <div class="item-footer">
-          <span class="item-price">20 000 VND</span>
+          <span class="item-price">32 000 VND</span>
           <button class="add-to-cart-btn">+</button>
         </div>
       </div>
     </div>
-    
     <div class="menu-item">
       <div class="item-image">
-        <img src="/assets/img/fries-medium.jpg" alt="Trà Đá" />
+        <img src="/img/tra da.jpg" alt="Trà Đá" />
       </div>
       <div class="item-details">
         <h3 class="item-name">Trà Đá</h3>
         <p class="item-description">Traditional Vietnamese iced tea, refreshing and cooling</p>
         <div class="item-footer">
           <span class="item-price">25 000 VND</span>
-          <button class="add-to-cart-btn">+</button>
-        </div>
-      </div>
-    </div>
-    
-    <div class="menu-item">
-      <div class="item-image">
-        <img src="/assets/img/fries-small.jpg" alt="Trà Tắc" />
-      </div>
-      <div class="item-details">
-        <h3 class="item-name">Trà Tắc</h3>
-        <p class="item-description">Vietnamese lime tea, perfectly balanced sweet and sour flavor</p>
-        <div class="item-footer">
-          <span class="item-price">35 000 VND</span>
           <button class="add-to-cart-btn">+</button>
         </div>
       </div>
@@ -156,7 +144,7 @@
   <div class="menu-grid">
     <div class="menu-item">
       <div class="item-image">
-        <img src="/assets/img/che-ba-mau.jpg" alt="Chè Ba Màu" />
+        <img src="/img/che ba mau.jpg" alt="Chè Ba Màu" />
       </div>
       <div class="item-details">
         <h3 class="item-name">Chè Ba Màu - Three Color Dessert</h3>
@@ -167,10 +155,9 @@
         </div>
       </div>
     </div>
-    
     <div class="menu-item">
       <div class="item-image">
-        <img src="/assets/img/banh-flan.jpg" alt="Bánh Flan" />
+        <img src="/img/flan.jpg" alt="Bánh Flan" />
       </div>
       <div class="item-details">
         <h3 class="item-name">Bánh Flan - Vietnamese Crème Caramel</h3>
@@ -181,10 +168,35 @@
         </div>
       </div>
     </div>
-    
     <div class="menu-item">
       <div class="item-image">
-        <img src="/assets/img/nuoc-mam-chay.jpg" alt="Nước Mắm Chay" />
+        <img src="/img/banh tet.jpg" alt="Bánh Tét" />
+      </div>
+      <div class="item-details">
+        <h3 class="item-name">Bánh Tét</h3>
+        <p class="item-description">Traditional Vietnamese sticky rice cake with mung bean and coconut filling</p>
+        <div class="item-footer">
+          <span class="item-price">50 000 VND</span>
+          <button class="add-to-cart-btn">+</button>
+        </div>
+      </div>
+    </div>
+    <div class="menu-item">
+      <div class="item-image">
+        <img src="/img/kem dua.jpg" alt="Kem Dừa" />
+      </div>
+      <div class="item-details">
+        <h3 class="item-name">Kem Dừa - Coconut Ice Cream</h3>
+        <p class="item-description">Homemade coconut ice cream served in a coconut shell</p>
+        <div class="item-footer">
+          <span class="item-price">35 000 VND</span>
+          <button class="add-to-cart-btn">+</button>
+        </div>
+      </div>
+    </div>
+    <div class="menu-item">
+      <div class="item-image">
+        <img src="/img/nuoc-mam-chay-3.jpeg" alt="Nước Mắm Chay" />
       </div>
       <div class="item-details">
         <h3 class="item-name">Nước Mắm Chay - Vegan Fish Sauce</h3>
@@ -195,44 +207,15 @@
         </div>
       </div>
     </div>
-    
     <div class="menu-item">
       <div class="item-image">
-        <img src="/assets/img/kem-dua.jpg" alt="Kem Dừa" />
-      </div>
-      <div class="item-details">
-        <h3 class="item-name">Kem Dừa - Coconut Ice Cream</h3>
-        <p class="item-description">Homemade coconut ice cream with chunks of young coconut, refreshing and creamy</p>
-        <div class="item-footer">
-          <span class="item-price">50 000 VND</span>
-          <button class="add-to-cart-btn">+</button>
-        </div>
-      </div>
-    </div>
-    
-    <div class="menu-item">
-      <div class="item-image">
-        <img src="/assets/img/tuong-ot.jpg" alt="Tương Ớt" />
+        <img src="/img/tuong ot.jpg" alt="Tương Ớt" />
       </div>
       <div class="item-details">
         <h3 class="item-name">Tương Ớt - Chili Sauce</h3>
-        <p class="item-description">Spicy homemade chili sauce with garlic and lemongrass, adds kick to any dish</p>
+        <p class="item-description">Spicy homemade chili sauce, perfect for dipping and adding heat</p>
         <div class="item-footer">
-          <span class="item-price">25 000 VND</span>
-          <button class="add-to-cart-btn">+</button>
-        </div>
-      </div>
-    </div>
-    
-    <div class="menu-item">
-      <div class="item-image">
-        <img src="/assets/img/banh-tet.jpg" alt="Bánh Tét" />
-      </div>
-      <div class="item-details">
-        <h3 class="item-name">Bánh Tét - Cylindrical Sticky Rice Cake</h3>
-        <p class="item-description">Traditional Vietnamese sticky rice cake with mung bean filling, wrapped in banana leaves</p>
-        <div class="item-footer">
-          <span class="item-price">60 000 VND</span>
+          <span class="item-price">10 000 VND</span>
           <button class="add-to-cart-btn">+</button>
         </div>
       </div>
@@ -384,4 +367,9 @@
   </div>
 </section>
 
-<script src="/js/restaurant-menu.js"></script> 
+<script src="/js/restaurant-menu.js"></script>
+
+<head>
+  <title>Hương Quê Quán</title>
+  <!-- Add other head elements here if needed -->
+</head> 

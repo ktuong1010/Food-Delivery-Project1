@@ -21,7 +21,10 @@ app.use(session({
 const hbs = exphbs.create({
    helpers: {
         eq: (a, b) => a === b, // Register the 'eq' helper
-        isActive: (currentPath, path) => currentPath.startsWith(path) ? 'active' : '', // Register the 'isActive' helper
+        isActive: (currentPath, path) => {
+            if (!currentPath || typeof currentPath !== 'string') return '';
+            return currentPath.startsWith(path) ? 'active' : '';
+        }, // Register the 'isActive' helper
         concat: (...args) => args.slice(0, -1).join(''), // Register the 'concat' helper
     },
   

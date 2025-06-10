@@ -1,0 +1,157 @@
+<div class="container checkout-main-container">
+  <div class="checkout-title-container" style="display:flex; flex-direction:column; align-items:center; margin-bottom:2.5rem;">
+    <h2 style="text-transform:uppercase; letter-spacing:0.18em; font-size:2.0rem; font-weight:700; margin-bottom:0.5rem;">Checkout</h2>
+    <div style="width:60px; height:4px; background:#FFD95E; border-radius:2px;"></div>
+  </div>
+  <div class="row g-4 align-items-stretch" style="min-height: 800px;">
+    <!-- Cart Items -->
+    <div class="col-md-8 d-flex flex-column">
+      <div class="card p-4 shadow-sm flex-fill mb-4" style="margin-top:20px; margin-bottom:20px;">
+        <h5 class="mb-3" style="font-size:1.8rem; font-weight:700;">Your Cart</h5>
+        <div id="cartItems">
+          {{#each cart}}
+          <div class="d-flex align-items-center mb-3 cart-item-row" data-index="{{@index}}">
+            <div class="card-img-container" style="height: 100px; width: 80px; overflow: hidden; margin-right: 18px; flex-shrink: 0;">
+              <img src="{{this.image}}" alt="{{this.name}}" class="card-img-top" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;" />
+            </div>
+            <div class="flex-grow-1 d-flex flex-column" style="gap:10px;">
+              <div class="fw-bold">{{this.name}}</div>
+              <div class="text-muted">{{this.price}} VND</div>
+            </div>
+            <div class="d-flex align-items-center" style="margin-left:60px;">
+              <button type="button" class="btn quantity-btn me-2 quantity-decrease" data-action="decrease" style="width:32px; height:32px; border-radius:50%; background:#FFE9A7; color:#fff; font-size:1.4rem; display:flex; align-items:center; justify-content:center; border:none; transition: background 0.2s;">-</button>
+              <input type="number" class="form-control form-control-lg text-center cart-qty-input" value="{{this.quantity}}" min="1" style="width: 44px; height: 32px; font-size:1.2rem; border-radius:8px; margin:0 8px;" />
+              <button type="button" class="btn quantity-btn ms-2 quantity-increase" data-action="increase" style="width:32px; height:32px; border-radius:50%; background:#B6F5D2; color:#fff; font-size:1.4rem; display:flex; align-items:center; justify-content:center; border:none; transition: background 0.2s;">+</button>
+            </div>
+            <div class="ms-4 fw-bold cart-item-total">{{multiply this.price this.quantity}} VND</div>
+            <button type="button" class="btn btn-link p-0 ms-3 remove-item-btn" data-index="{{@index}}" style="border:none; background:none;">
+              <img src="/img/Remove button.svg" alt="Remove" style="width:28px; height:28px;" />
+            </button>
+          </div>
+          {{else}}
+          <div class="text-center text-muted">Your cart is empty.</div>
+          {{/each}}
+        </div>
+        <!-- Delivery Location Section (now below products) -->
+        <div class="d-flex align-items-center justify-content-between mb-4" style="padding-bottom: 16px; border-bottom: 1px solid #eee; font-size:1.6rem; gap: 50px; margin-top:20px; margin-bottom:20px;">
+          <div>
+            <span class="fw-bold" style="font-size:1.6rem;">Delivery Location:</span>
+            {{#if user.location}}
+              <span id="delivery-location" style="font-size:1.6rem;">{{user.location}}</span>
+            {{else}}
+              <span id="delivery-location" style="font-size:1.6rem; color: #888;">No Address Added Yet</span>
+            {{/if}}
+          </div>
+          <a href="/delivery-location" class="btn btn-outline-success" style="font-size:1.6rem; background:transparent; color:#0ABE63; border-radius:18px; border:2px solid #0ABE63;">Change Location</a>
+        </div>
+      </div>
+    </div>
+    <!-- Summary & Discount -->
+    <div class="col-md-4 d-flex flex-column">
+      <div class="card p-4 shadow-sm flex-fill mb-4" style="margin-top:20px; margin-bottom:20px;">
+        <h5 class="mb-3" style="font-size:1.8rem; font-weight:700;">Order Summary</h5>
+        <div class="mb-3">
+          <label for="discountCode" class="form-label">Discount Code (optional)</label>
+          <input type="text" class="form-control" id="discountCode" placeholder="Enter code" style="height: 48px; margin-top: 20px; margin-bottom: 20px; font-size: 1.6rem; border-radius: 12px;" />
+        </div>
+        <div class="mb-4 d-flex justify-content-between align-items-center" style="gap: 48px;">
+          <div class="form-check flex-fill" style="min-width: 0;">
+            <input class="form-check-input" type="radio" name="deliveryOption" id="pickupOption" value="pickup" checked>
+            <label class="form-check-label" for="pickupOption" style="font-size:1.4rem;">
+              <i class="fa fa-store"></i> Store Pickup
+            </label>
+          </div>
+          <div class="form-check flex-fill" style="min-width: 0;">
+            <input class="form-check-input" type="radio" name="deliveryOption" id="deliveryOption" value="delivery">
+            <label class="form-check-label" for="deliveryOption" style="font-size:1.4rem;">
+              <i class="fa fa-motorcycle"></i> Home Delivery
+            </label>
+          </div>
+        </div>
+        <div class="d-flex flex-column" style="gap: 15px;">
+          <div class="d-flex justify-content-between" id="deliveryFeeRow" style="display:none;">
+            <span>Delivery Fee</span>
+            <span id="deliveryFee">18,000 VND</span>
+          </div>
+          <div class="d-flex justify-content-between">
+            <span>Subtotal</span>
+            <span id="subtotal">{{subtotal}} VND</span>
+          </div>
+          <div class="d-flex justify-content-between">
+            <span>Discount</span>
+            <span id="discount">0 VND</span>
+          </div>
+          <div class="d-flex justify-content-between fw-bold" style="font-size:1.2em;">
+            <span>Total</span>
+            <span id="total">{{total}} VND</span>
+          </div>
+        </div>
+        <hr />
+        <button id="placeOrderBtn" class="btn w-100" style="background:#0ABE63; color:#fff; font-size:2rem; padding: 18px 0; font-weight:600; display:flex; align-items:center; justify-content:center; gap:10px; margin-top: 18px; border:none; border-radius:12px;">
+          <i class="fa fa-arrow-right"></i> Place Order
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+function formatVND(num) {
+  return num.toLocaleString('vi-VN') + ' VND';
+}
+function recalcCart() {
+  let subtotal = 0;
+  document.querySelectorAll('.cart-item-row').forEach(row => {
+    const price = parseInt(row.querySelector('.text-muted').textContent);
+    const qty = parseInt(row.querySelector('.cart-qty-input').value);
+    const total = price * qty;
+    row.querySelector('.cart-item-total').textContent = formatVND(total);
+    subtotal += total;
+  });
+  document.getElementById('subtotal').textContent = formatVND(subtotal);
+  let deliveryFee = 0;
+  if (document.getElementById('deliveryOption').checked) deliveryFee = 18000;
+  document.getElementById('deliveryFee').textContent = deliveryFee ? formatVND(deliveryFee) : '0 VND';
+  const discount = 0;
+  document.getElementById('discount').textContent = formatVND(discount);
+  document.getElementById('total').textContent = formatVND(subtotal + deliveryFee - discount);
+}
+document.querySelectorAll('.quantity-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    const row = this.closest('.cart-item-row');
+    const input = row.querySelector('input[type="number"]');
+    let qty = parseInt(input.value);
+    if (this.dataset.action === 'increase') qty++;
+    if (this.dataset.action === 'decrease' && qty > 1) qty--;
+    input.value = qty;
+    recalcCart();
+  });
+});
+document.querySelectorAll('.remove-item-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    const row = this.closest('.cart-item-row');
+    row.remove();
+    recalcCart();
+  });
+});
+document.getElementById('pickupOption').addEventListener('change', recalcCart);
+document.getElementById('deliveryOption').addEventListener('change', recalcCart);
+window.addEventListener('DOMContentLoaded', recalcCart);
+
+// Add hover effect for quantity buttons
+const style = document.createElement('style');
+style.innerHTML = `
+  .quantity-decrease:hover { background: #FFD95E !important; }
+  .quantity-increase:hover { background: #0ABE63 !important; }
+`;
+document.head.appendChild(style);
+</script>
+<style>
+  input[type=number]::-webkit-inner-spin-button, 
+  input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
+</style> 

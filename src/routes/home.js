@@ -13,5 +13,7 @@ router.get('/menu', homeController.menu);
 router.get('/restaurant', homeController.restaurantMenu);
 router.get('/delivery-location', homeController.deliveryLocation);
 router.post('/delivery-location', homeController.updateLocation);
+router.get('/track-order', homeController.trackOrder);
+router.get('/checkout', homeController.checkout);
 
 module.exports = router;

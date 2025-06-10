@@ -1,5 +1,7 @@
 // Importing the orderModel to interact with the order data in the database
 const orderModel = require('../models/orderModel');
+const exphbs = require('express-handlebars');
+const Handlebars = require('handlebars');
 
 class OrderController {
 
@@ -77,3 +79,14 @@ class OrderController {
 
 // Exporting an instance of the OrderController class
 module.exports = new OrderController();
+
+// Register the helper
+const hbs = exphbs.create({
+  helpers: {
+    multiply: (a, b) => a * b
+  }
+});
+
+Handlebars.registerHelper('multiply', function(a, b) {
+  return a * b;
+});

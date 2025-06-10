@@ -1,0 +1,26 @@
+<div class="container" style="max-width: 900px; margin: 50px auto;">
+  <h2 class="mb-4" style="text-align:center;">Order History</h2>
+  <div class="row g-4">
+    {{#each orders}}
+    <div class="col-12">
+      <div class="card shadow-sm flex-row align-items-center p-3">
+        <img src="{{this.image}}" alt="{{this.name}}" style="width: 90px; height: 90px; object-fit: cover; border-radius: 12px; margin-right: 24px;" />
+        <div class="flex-grow-1">
+          <h5 class="mb-1">{{this.name}}</h5>
+          <div class="mb-1"><strong>Ordered:</strong> {{this.orderedTime}}</div>
+          <div class="mb-1"><strong>Quantity:</strong> {{this.quantity}}</div>
+          <div class="mb-1"><strong>Price:</strong> {{this.price}} VND</div>
+          <div class="mb-1"><strong>Status:</strong> <span class="badge {{#if (eq this.status 'Shipped')}}bg-success{{else}}bg-warning{{/if}}">{{this.status}}</span></div>
+          {{#if this.receivedTime}}
+          <div class="mb-1"><strong>Received:</strong> {{this.receivedTime}}</div>
+          {{/if}}
+        </div>
+      </div>
+    </div>
+    {{else}}
+    <div class="col-12 text-center">
+      <p>No orders found.</p>
+    </div>
+    {{/each}}
+  </div>
+</div> 

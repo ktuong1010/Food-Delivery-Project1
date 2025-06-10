@@ -51,13 +51,7 @@ class homeController {
             { image: '/img/restaurants/kfc-binh-duong.png', name: "KFC Bình Dương" },
             { image: '/img/restaurants/life-coffee.jpg', name: "Life Coffee" },
             { image: '/img/restaurants/pho-viet-huong.jpg', name: "Phở Việt Hương" },
-            { image: '/img/restaurants/burger-king-binh-duong.avif', name: "Burger King Bình Dương" }
-            ],
-            statistics: [
-            { number: '546+', label: 'Registered Riders' },
-            { number: '789,900+', label: 'Orders Delivered' },
-            { number: '690+', label: 'Restaurants Partnered' },
-            { number: '17,457+', label: 'Food Items' }
+            { image: '/img/burger king.svg', name: "Burger King Bình Dương" }
             ]
         });
     }
@@ -121,15 +115,8 @@ class homeController {
             { image: '/img/restaurants/kfc-binh-duong.png', name: "KFC Bình Dương" },
             { image: '/img/restaurants/life-coffee.jpg', name: "Life Coffee" },
             { image: '/img/restaurants/pho-viet-huong.jpg', name: "Phở Việt Hương" },
-            { image: '/img/restaurants/burger-king-binh-duong.avif', name: "Burger King Bình Dương" }
-            ],
-            statistics: [
-            { number: '546+', label: 'Registered Riders' },
-            { number: '789,900+', label: 'Orders Delivered' },
-            { number: '690+', label: 'Restaurants Partnered' },
-            { number: '17,457+', label: 'Food Items' }
+            { image: '/img/burger king.svg', name: "Burger King Bình Dương" }
             ]
-            
         });
     }
 
@@ -229,15 +216,16 @@ class homeController {
 
             // Render the restaurant menu view
             res.render('restaurant-menu', {
-                layout: 'user', // Use the user layout
-                currentPath: req.path, // Pass the current path for active link highlighting
+                layout: 'user',
+                currentPath: req.path,
                 user: {
                     location: 'Regent Street, A4, A4201, London'
                 },
                 cart: {
                     items: 23,
                     total: '79.89'
-                }
+                },
+                isRestaurantMenu: true
             });
         } catch (error) {
             // Log the error for debugging
@@ -297,6 +285,36 @@ class homeController {
                 error: 'An error occurred while updating your location'
             });
         }
+    }
+
+    async trackOrder(req, res) {
+        try {
+            res.render('track-order', {
+                layout: 'user',
+                title: 'Track Order'
+            });
+        } catch (error) {
+            console.error('Error in trackOrder:', error);
+            res.status(500).render('error', {
+                layout: 'public',
+                message: 'An error occurred while loading the track order page. Please try again later.',
+            });
+        }
+    }
+
+    async checkout(req, res) {
+        const cart = [
+            { image: '/img/food1.jpg', name: 'Braised Mushrooms Feet with Pepper', price: 120000, quantity: 2 },
+            { image: '/img/drink1.jpg', name: 'Trà Đá', price: 10000, quantity: 1 },
+            { image: '/img/drink2.jpg', name: 'Nước Suối', price: 15000, quantity: 1 },
+        ];
+        const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+        res.render('checkout', {
+            layout: 'user',
+            title: 'Checkout',
+            cart,
+            subtotal,
+        });
     }
 }
 
