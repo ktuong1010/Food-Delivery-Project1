@@ -502,7 +502,7 @@
 .menu-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 32px;
 }
 
 .menu-item {
@@ -512,7 +512,7 @@
   transition: transform 0.3s ease;
   overflow: hidden;
   position: relative;
-  min-height: 180px;
+  min-height: 200px;
   display: flex;
   flex-direction: column;
 }
@@ -1091,7 +1091,7 @@
 @media screen and (max-width: 1024px) {
   .menu-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
+    gap: 24px;
   }
   
   .restaurant-banner,
@@ -1136,11 +1136,11 @@
   
   .menu-grid {
     grid-template-columns: 1fr;
-    gap: 15px;
+    gap: 20px;
   }
   
   .menu-item {
-    min-height: 200px;
+    min-height: 220px;
   }
   
   .item-image {

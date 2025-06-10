@@ -358,4 +358,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize other components if needed
     console.log('Foodzie website initialized successfully!');
+
+    var orderNowBtn = document.getElementById('order-now-btn');
+    if (orderNowBtn) {
+        orderNowBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            var dealsSection = document.getElementById('exclusive-deals');
+            if (dealsSection) {
+                dealsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    }
 });
