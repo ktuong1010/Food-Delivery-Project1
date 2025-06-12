@@ -12,11 +12,11 @@ class homeController {
             layout: 'public', // Use the public layout
             item: item, // Pass the fetched items to the view
             user: {
-            location: 'Regent Street, A4, A4201, London'
+            location: 'DT748 Street, An Dien, Ben Cat, Binh Duong'
             },
             cart: {
             items: 23,
-            total: '79.89'
+            total: '79 000'
             },
             exclusiveDeals: [
             {
@@ -80,7 +80,7 @@ class homeController {
             },
             cart: {
             items: 23,
-            total: '79.89'
+            total: '79 000'
             },
             exclusiveDeals: [
             {
@@ -304,7 +304,7 @@ class homeController {
 
     async checkout(req, res) {
         const cart = [
-            { image: '/img/food1.jpg', name: 'Braised Mushrooms Feet with Pepper', price: 120000, quantity: 2 },
+            { image: '/img/food1.jpg', name: 'Braised Mushrooms Feet with Pepper', price: 120000, quantity: 1 },
             { image: '/img/drink1.jpg', name: 'Trà Đá', price: 10000, quantity: 1 },
             { image: '/img/drink2.jpg', name: 'Nước Suối', price: 15000, quantity: 1 },
         ];
